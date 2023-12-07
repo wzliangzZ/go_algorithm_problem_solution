@@ -24,16 +24,16 @@ func solve(in *bufio.Reader, out *bufio.Writer) {
 			pos = i
 		}
 	}
-	fmt.Fprintln(out, n - 1)
+	fmt.Fprintln(out, n-1)
 	for i := 0; i < n; i++ {
-		if i!= pos {
-			fmt.Fprintln(out, pos + 1, i + 1, arr[pos], arr[pos] + Abs(pos - i))
+		if i != pos {
+			fmt.Fprintln(out, pos+1, i+1, arr[pos], arr[pos]+Abs(pos-i))
 		}
-	}	
-	
+	}
+
 }
 
-func main() {
+func CF1521B() {
 	in := bufio.NewReader(os.Stdin)
 	out := bufio.NewWriter(os.Stdout)
 	defer out.Flush()

@@ -11,7 +11,6 @@ func Divisors[T int | int8 | int16 | int32 | int64](x T) []T {
 				arr = append(arr, x/i)
 			}
 		}
-
 	}
 	return arr
 }
