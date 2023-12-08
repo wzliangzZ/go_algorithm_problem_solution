@@ -5,7 +5,6 @@ import (
 	"fmt"
 )
 
-
 func CF1650D(in *bufio.Reader, out *bufio.Writer) {
 	var n int
 	fmt.Fscan(in, &n)
@@ -13,7 +12,7 @@ func CF1650D(in *bufio.Reader, out *bufio.Writer) {
 	for i := 0; i < n; i++ {
 		fmt.Fscan(in, &arr[i])
 	}
-	find := func (arr []int, t int) int {
+	find := func(arr []int, t int) int {
 		for i, v := range arr {
 			if v == t {
 				return i
