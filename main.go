@@ -9,8 +9,7 @@ import (
 func solve(in *bufio.Reader, out *bufio.Writer) {
 	var n int
 	fmt.Fscan(in, &n)
-	
-	
+
 }
 
 func main() {
