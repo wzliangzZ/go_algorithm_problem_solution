@@ -22,4 +22,5 @@ func main() {
 	for i := 0; i < tot; i++ {
 		solve(in, out)
 	}
+
 }
