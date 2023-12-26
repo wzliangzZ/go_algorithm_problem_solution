@@ -3,11 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"sort"
+	//"os"
 )
 
-func solve(in *bufio.Reader, out *bufio.Writer) {
+func CF817B(in *bufio.Reader, out *bufio.Writer) {
 	var n int
 	fmt.Fscan(in, &n)
 	arr := make([]int, n)
@@ -35,13 +35,14 @@ func solve(in *bufio.Reader, out *bufio.Writer) {
 		if cnt[t[i]] >= k {
 			res *= C(cnt[t[i]], k)
 			k = 0
-		}else{
+		} else {
 			k -= cnt[t[i]]
 		}
 	}
 	fmt.Fprintln(out, res)
 }
 
+/*
 func main() {
 	in := bufio.NewReader(os.Stdin)
 	out := bufio.NewWriter(os.Stdout)
@@ -51,6 +52,7 @@ func main() {
 	//fmt.Fscan(in, &tot)
 
 	for i := 0; i < tot; i++ {
-		solve(in, out)
+		CF817B(in, out)
 	}
 }
+*/
