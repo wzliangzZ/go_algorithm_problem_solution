@@ -56,7 +56,7 @@ func main() {
 	defer out.Flush()
 
 	var tot int = 1
-	fmt.Fscan(in, &tot)
+	//fmt.Fscan(in, &tot)
 
 	for i := 0; i < tot; i++ {
 		solve(in, out)
