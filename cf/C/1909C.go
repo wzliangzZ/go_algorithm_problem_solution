@@ -3,14 +3,14 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"sort"
+	//"os"
 )
 
-func solve(in *bufio.Reader, out *bufio.Writer) {
+func CF1909C(in *bufio.Reader, out *bufio.Writer) {
 	var n int
 	fmt.Fscan(in, &n)
-	type pair struct { a, b int }
+	type pair struct{ a, b int }
 	var arr []pair
 	w := make([]int, n)
 	for i := 0; i < n; i++ {
@@ -38,7 +38,7 @@ func solve(in *bufio.Reader, out *bufio.Writer) {
 		if arr[i].b == 0 {
 			left = append(left, arr[i].a)
 		} else {
-			seg = append(seg, arr[i].a - left[len(left)-1])
+			seg = append(seg, arr[i].a-left[len(left)-1])
 			left = left[:len(left)-1]
 		}
 	}
@@ -50,6 +50,7 @@ func solve(in *bufio.Reader, out *bufio.Writer) {
 	fmt.Fprintln(out, res)
 }
 
+/*
 func main() {
 	in := bufio.NewReader(os.Stdin)
 	out := bufio.NewWriter(os.Stdout)
@@ -59,6 +60,7 @@ func main() {
 	fmt.Fscan(in, &tot)
 
 	for i := 0; i < tot; i++ {
-		solve(in, out)
+		CF1909C(in, out)
 	}
 }
+*/
