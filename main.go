@@ -7,8 +7,8 @@ import (
 )
 
 func solve(in *bufio.Reader, out *bufio.Writer) {
-	var n, m int
-	fmt.Fscan(in, &n, &m)
+	var t, m int
+	fmt.Fscan(in, &t, &m)
 
 }
 
