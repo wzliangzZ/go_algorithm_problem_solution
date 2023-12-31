@@ -3,24 +3,24 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
+	//"os"
 )
 
-func solve(in *bufio.Reader, out *bufio.Writer) {
+func P1776(in *bufio.Reader, out *bufio.Writer) {
 	var n, m int
 	fmt.Fscan(in, &n, &m)
 	var v, w []int
-	f := make([]int, m + 1)
+	f := make([]int, m+1)
 	split := func(a, b, c int) {
 		var k int = 1
 		for k < c {
-			v = append(v, a * k)
-			w = append(w, b * k)
+			v = append(v, a*k)
+			w = append(w, b*k)
 			c -= k
 			k <<= 1
 		}
-		v = append(v, a * c)
-		w = append(w, b * c)
+		v = append(v, a*c)
+		w = append(w, b*c)
 	}
 
 	for i := 0; i < n; i++ {
@@ -30,12 +30,13 @@ func solve(in *bufio.Reader, out *bufio.Writer) {
 	}
 	for i := 0; i < len(v); i++ {
 		for j := m; j >= w[i]; j-- {
-			f[j] = max(f[j], f[j - w[i]] + v[i])
+			f[j] = max(f[j], f[j-w[i]]+v[i])
 		}
 	}
 	fmt.Fprintln(out, f[m])
 }
 
+/*
 func main() {
 	in := bufio.NewReader(os.Stdin)
 	out := bufio.NewWriter(os.Stdout)
@@ -45,6 +46,7 @@ func main() {
 	//fmt.Fscan(in, &tot)
 
 	for i := 0; i < tot; i++ {
-		solve(in, out)
+		P1776(in, out)
 	}
 }
+*/
