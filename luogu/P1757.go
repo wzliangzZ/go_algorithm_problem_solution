@@ -23,6 +23,8 @@ func P1757(in *bufio.Reader, out *bufio.Writer) {
 		for j := m; j > 0; j-- {
 			for i := 0; i < len(v[k]); i++ {
 				if j >= w[k][i] {
+					//每组物品选或不选，相当于01背包问题每个物品选货不选
+					//f[k][j] = max(f[k][j], f[k - 1][j - w[k][i]] + v[k][i])	
 					f[j] = max(f[j], f[j-w[k][i]]+v[k][i])
 				}
 			}
