@@ -7,8 +7,11 @@ import (
 )
 
 func solve(in *bufio.Reader, out *bufio.Writer) {
-	var n int
-	fmt.Fscan(in, &n)
+	var T int
+	for fmt.Fscan(in, &T); T > 0; T-- {
+
+	}
+
 }
 
 func main() {
@@ -16,10 +19,5 @@ func main() {
 	out := bufio.NewWriter(os.Stdout)
 	defer out.Flush()
 
-	var tot int = 1
-	fmt.Fscan(in, &tot)
-
-	for i := 0; i < tot; i++ {
-		solve(in, out)
-	}
+	solve(in, out)
 }
