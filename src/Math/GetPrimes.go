@@ -11,6 +11,7 @@ func GetPrimes(n int) []int {
 		}
 		for j := 0; primes[j] <= n/i; j++ {
 			st[primes[j]*i] = true
+			//保证当前数是被它的最小质因子筛掉
 			if i%primes[j] == 0 {
 				break
 			}
