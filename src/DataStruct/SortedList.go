@@ -7,10 +7,13 @@ import (
 /*
 	有序数组
 
+Len()			O(1)
 Add()			O(logn)
-Delete()		待实现...
 BisectLeft()	O(logn)
+
 */
+
+/*基本思路：有序数组分成大数组和小数组，小数组内的顺序直接暴力维护，当小数组容量过载时，加入大数组，再对大数组排序。*/
 type SortedList struct {
 	Small []int
 	Large []int
@@ -21,7 +24,7 @@ func NewSortedList() SortedList {
 }
 
 func (sl *SortedList) Add(v int) {
-	if len(sl.Small) > 7222 {
+	if len(sl.Small) > 6543 {
 		sl.Large = append(sl.Large, sl.Small...)
 		sl.Small = []int{}
 		sort.Ints(sl.Large)
@@ -32,6 +35,7 @@ func (sl *SortedList) Add(v int) {
 		sl.Small = append([]int{v}, sl.Small...)
 	} else {
 		p := sort.Search(len(sl.Small), func(i int) bool { return sl.Small[i] >= v })
+		// 要先将p之前的元素复制到t
 		t := append([]int{}, sl.Small[p:]...)
 		sl.Small = append(sl.Small[:p], v)
 		sl.Small = append(sl.Small, t...)
