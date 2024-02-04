@@ -24,3 +24,7 @@ func (h *Heap) Pop() any {
 	*h = old[0 : len(old)-1]
 	return x
 }
+
+func (h *Heap) Top() any {
+	return (*h)[0]
+}
